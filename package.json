@@ -7,14 +7,17 @@
   },
   "author": "Peter Javorka <peter.javorka@artin.cz>",
   "scripts": {
-    "build": "babel src/index.js -o dist/app.js",
-    "start": "node dist/app.js",
+    "build-server": "babel src -d dist",
+    "build-client": "webpack --config webpack.config.dev.js",
+    "build": "npm run build-server",
+    "start": "node dist/index.js",
     "test": "mocha --compilers js:babel-core/register"
   },
   "dependencies": {
     "koa": "^2.0.0",
     "koa-bodyparser": "^3.2.0",
-    "koa-router": "^7.0.1"
+    "koa-router": "^7.0.1",
+    "koa-send": "^3.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.18.0",

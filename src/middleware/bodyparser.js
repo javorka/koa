@@ -6,7 +6,8 @@
  */
 
 'use strict';
- 
 import parser from 'koa-bodyparser';
 
-app.use(parser());
+export default parser({
+  // some options here
+});
